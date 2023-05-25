@@ -2,7 +2,7 @@ import mongoose, { Schema } from 'mongoose';
 
 // create PostModel class from schema
 const Post = new Schema({
-
+  author: { type: Schema.Types.ObjectId, ref: 'User' },
   title: String,
   tags: String,
   content: String,

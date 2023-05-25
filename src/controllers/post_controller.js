@@ -1,9 +1,8 @@
 import Post from '../models/post_model';
 
-export async function createPost(postFields) {
-  console.log('calling create post');
-  console.log(postFields);
+export async function createPost(postFields, uID) {
   const post = new Post();
+  post.author = uID;
   post.title = postFields.title;
   post.tags = postFields.tags;
   post.content = postFields.content;
